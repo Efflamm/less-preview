@@ -1,0 +1,1 @@
+module.exports = require("github:polymer/WeakMap@0.4.2/Gruntfile");
