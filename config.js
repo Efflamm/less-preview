@@ -13,7 +13,17 @@ System.config({
     "npm:*": "jspm_packages/npm/*.js"
   },
   "bundles": {
-    "bundle": [
+    "app-bundle": [
+      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents.min",
+      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents",
+      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents-lite.min",
+      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents-lite",
+      "github:webcomponents/webcomponentsjs@0.6.3/ShadowDOM.min",
+      "github:webcomponents/webcomponentsjs@0.6.3/ShadowDOM",
+      "github:webcomponents/webcomponentsjs@0.6.3/HTMLImports.min",
+      "github:webcomponents/webcomponentsjs@0.6.3/HTMLImports",
+      "github:webcomponents/webcomponentsjs@0.6.3/CustomElements.min",
+      "github:webcomponents/webcomponentsjs@0.6.3/CustomElements",
       "github:polymer/mutationobservers@0.4.2/MutationObserver",
       "github:polymer/mutationobservers@0.4.2",
       "npm:process@0.10.1/browser",
@@ -22,6 +32,8 @@ System.config({
       "github:jspm/nodelibs-process@0.1.1",
       "npm:codemirror@5.3.0/lib/codemirror",
       "npm:codemirror@5.3.0",
+      "github:aurelia/html-template-element@0.2.0/HTMLTemplateElement.min",
+      "github:aurelia/html-template-element@0.2.0",
       "npm:core-js@0.9.15/modules/$.fw",
       "npm:core-js@0.9.15/modules/$.dom-create",
       "npm:core-js@0.9.15/modules/$.shared",
@@ -223,6 +235,7 @@ System.config({
       "github:aurelia/event-aggregator@0.5.0/index",
       "github:aurelia/event-aggregator@0.5.0",
       "less-versions",
+      "less-options",
       "insert-script",
       "less",
       "options-draw",
@@ -241,6 +254,7 @@ System.config({
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.8.1",
     "aurelia-event-aggregator": "github:aurelia/event-aggregator@0.5.0",
     "aurelia-framework": "github:aurelia/framework@0.12.0",
+    "aurelia-html-template-element": "github:aurelia/html-template-element@0.2.0",
     "aurelia-loader-default": "github:aurelia/loader-default@0.8.0",
     "aurelia-logging-console": "github:aurelia/logging-console@0.5.0",
     "aurelia-templating-binding": "github:aurelia/templating-binding@0.12.0",
