@@ -14,16 +14,7 @@ System.config({
   },
   "bundles": {
     "app-bundle": [
-      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents.min",
-      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents",
-      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents-lite.min",
-      "github:webcomponents/webcomponentsjs@0.6.3/webcomponents-lite",
-      "github:webcomponents/webcomponentsjs@0.6.3/ShadowDOM.min",
-      "github:webcomponents/webcomponentsjs@0.6.3/ShadowDOM",
       "github:webcomponents/webcomponentsjs@0.6.3/HTMLImports.min",
-      "github:webcomponents/webcomponentsjs@0.6.3/HTMLImports",
-      "github:webcomponents/webcomponentsjs@0.6.3/CustomElements.min",
-      "github:webcomponents/webcomponentsjs@0.6.3/CustomElements",
       "github:polymer/mutationobservers@0.4.2/MutationObserver",
       "github:polymer/mutationobservers@0.4.2",
       "npm:process@0.10.1/browser",
