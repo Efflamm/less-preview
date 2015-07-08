@@ -22,7 +22,7 @@
       </cmeditor></div>
     </div>
      <div class="cm-css">
-      <div class="code-wrap right">
+      <div class="code-wrap right ${hasError ? 'error' : ''}">
         <h2 class="code-label right">CSS</h2>
         <cmeditor readonly="true" value.bind="css">
       </cmeditor></div>
@@ -38,44 +38,48 @@
   <textarea ref="cmTextarea"></textarea>
  </template>
 <template id="options-draw.html!view">
+  <require from="./toggle-button"></require>
   <section class="options-drawer" css="opacity: ${isVisible ? '1' : '0'}; top: ${isVisible ? '43px' : '0px'}; display: ${isDisplayed ? 'block' : 'none'}">
     <article class="options-drawer-wrap">
-      <div class="row-fluid options-row first-row">
+      <div class="row options-row first-row">
         <div class="col-sm-3 option-column">
           <label for="less-version" class="control-label">LESS Version</label>
           <select id="less-version" class="less-version form-control" value.two-way="selectedLessVersion">
             <option repeat.for="version of lessVersions" value.bind="version">${version}</option>
           </select>
         </div>
-        <div class="col-sm-3 option-column">
+        <div class="col-sm-3 option-column" show.bind="outputLineNumbersAvailable">
           <label class="control-label">Output Line Numbers</label>
-          <button class="btn btn-default col-sm-12">Disabled</button>
-          <select class="form-control" disabled="disabled" style="display: none;">
-            <option value="0" selected="selected">Comments</option>
-            <option value="1">Media Query</option>
-            <option value="2">All</option>
+          <toggle-button enabled.two-way="outputLineNumbers"></toggle-button>
+          <select class="form-control" show.bind="outputLineNumbers" value.two-way="outputLineNumbersType">
+            <option value="comments" selected="selected">Comments</option>
+            <option value="mediaquery">Media Query</option>
+            <option value="all">All</option>
           </select>
         </div>
-        <div class="col-sm-3 option-column">
+        <div class="col-sm-3 option-column" show.bind="relativeUrlsAvailable">
           <label class="control-label">Relative URLs</label>
-          <button class="btn btn-default col-sm-12">Disabled</button>
+          <toggle-button enabled.two-way="relativeUrls"></toggle-button>
         </div>
-        <div class="col-sm-3 option-column">
+        <div class="col-sm-3 option-column" show.bind="rootPathAvailable">
           <label class="control-label">Change Rootpath</label>
-          <button class="btn btn-default col-sm-12">Disabled</button>
-          <input placeholder="Enter rootpath" type="text" class="" disabled="disabled" style="display: none;">
+          <toggle-button enabled.two-way="rootPathEnabled"></toggle-button>
+          <input placeholder="Enter rootpath" type="text" show.bind="rootPathEnabled" value.two-way="rootPath" class="form-control">
         </div>
       </div>
-      <div class="row-fluid options-row last-row">
+      <div class="row options-row last-row" show.bind="strictMathAvailable">
         <div class="col-sm-3 option-column">
           <label class="control-label">Strict Math</label>
-          <button class="btn btn-default col-sm-12">Disabled</button>
+          <toggle-button enabled.two-way="strictMath"></toggle-button>
         </div>
-        <div class="col-sm-3 option-column">
+        <div class="col-sm-3 option-column" show.bind="strictUnitsAvailable">
           <label class="control-label">Strict Units</label>
-          <button class="btn btn-default col-sm-12">Disabled</button>
+          <toggle-button enabled.two-way="strictUnits"></toggle-button>
         </div>
       </div>
     </article>
   </section>
+</template>
+<template id="toggle-button.html!view">
+  <button class="btn btn-default col-sm-12 ${enabled ? 'active' : ''}" click.delegate="toggle();" data-toggle="button" aria-pressed="false" autocomplete="off">${ enabled ? "Enabled" : "Disabled" }</button>
 </template>
